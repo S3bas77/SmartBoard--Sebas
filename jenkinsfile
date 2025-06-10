@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DROPBOX_TOKEN = credentials('DROPBOX_TOKEN') // Dejar vacío si no existe aún
+        DROPBOX_TOKEN = credentials('DROPBOX_TOKEN')
     }
 
     stages {
