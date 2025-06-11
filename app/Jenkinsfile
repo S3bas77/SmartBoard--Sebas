@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    tools {
+        gradle 'gradle-8.0'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/TU_USUARIO/TU_REPOSITORIO.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh './gradlew assembleDebug'
+            }
+        }
+
+        stage('Tests') {
+            steps {
+                sh './gradlew testDebugUnitTest'
+            }
+        }
+    }
+}
