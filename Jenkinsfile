@@ -6,12 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('Limpiar caché de Gradle') {
-            steps {
-                echo 'Eliminando caché de Gradle...'
-                bat 'rmdir /s /q C:\\Windows\\System32\\config\\systemprofile\\.gradle\\caches'
-            }
-        }
         stage('Checkout') {
             steps {
                 git 'https://github.com/S3bas77/SmartBoard--Sebas.git'
